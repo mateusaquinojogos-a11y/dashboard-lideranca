@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex">
+    <title>Executive Dashboard</title>
+    <style>
+        body {
+            background-color: #121212;
+            color: #ffffff;
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            max-width: 1200px;
+            margin: auto;
+            padding: 20px;
+        }
+        .header {
+            text-align: center;
+        }
+        .card {
+            background-color: #1e1e1e;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 10px 0;
+        }
+        .indicator {
+            font-size: 2em;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Executive Dashboard</h1>
+        </div>
+        <div class="card">
+            <h2>Operations Indicators</h2>
+            <div class="indicator">[Indicator Data]</div>
+        </div>
+        <div class="card">
+            <h2>Goals</h2>
+            <div class="indicator">[Goal Data]</div>
+        </div>
+        <div class="card">
+            <h2>Actual Performance</h2>
+            <div class="indicator">[Performance Data]</div>
+        </div>
+    </div>
+    <script>
+        fetch('data.json')
+            .then(response => response.json())
+            .then(data => {
+                // Logic to update indicators with fetched data
+                console.log(data);
+            });
+    </script>
+</body>
+</html>
