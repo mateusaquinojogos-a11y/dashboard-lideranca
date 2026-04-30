@@ -16,7 +16,7 @@ function atualizarData() {
     const hoje = new Date();
     const opcoes = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
     const dataFormatada = hoje.toLocaleDateString('pt-BR', opcoes);
-    document.getElementById('dataAtual').textContent = `Atualizado em: ${dataFormatada}`;
+    document.getElementById('dataAtual').textContent = `📅 ${dataFormatada}`;
 }
 
 // ===== CARREGAR DADOS DO JSON =====
@@ -87,38 +87,50 @@ function atualizarDashboard() {
     // Montar HTML
     let html = `
         <div class="segmento-info">
-            <h3>Segmento</h3>
+            <h3>📌 Segmento Selecionado</h3>
             <p class="segmento-value">${dadosSeg.segmento}</p>
         </div>
         
-        <div class="table-container">
-            <table class="indicators-table">
-                <thead>
-                    <tr>
-                        <th>Indicador</th>
-                        <th>Meta - Maio 2026</th>
-                    </tr>
-                </thead>
-                <tbody>
+        <div class="indicators-cards">
     `;
     
-    // Adicionar indicadores
-    dadosSeg.indicadores.forEach(ind => {
+    // Adicionar cards dos indicadores
+    dadosSeg.indicadores.forEach((ind, index) => {
+        const emoji = getEmojiParaIndicador(ind.nome);
         html += `
-            <tr>
-                <td>${ind.nome}</td>
-                <td class="value-neutral">${ind.meta}</td>
-            </tr>
+            <div class="indicator-card">
+                <div class="card-content">
+                    <div class="card-icon">${emoji}</div>
+                    <div class="card-name">${ind.nome}</div>
+                    <div class="card-value">${ind.meta}</div>
+                </div>
+            </div>
         `;
     });
     
     html += `
-                </tbody>
-            </table>
         </div>
     `;
     
     document.getElementById('conteudo').innerHTML = html;
+}
+
+// ===== EMOJIS POR TIPO DE INDICADOR =====
+function getEmojiParaIndicador(nome) {
+    const nomeUpper = nome.toUpperCase();
+    
+    if (nomeUpper.includes('TMO')) return '⏱️';
+    if (nomeUpper.includes('RECHAMADA')) return '📞';
+    if (nomeUpper.includes('TRANSFERÊNCIA')) return '🔄';
+    if (nomeUpper.includes('TEMPO LOGADO')) return '⏰';
+    if (nomeUpper.includes('TICKET')) return '🎫';
+    if (nomeUpper.includes('INSTALAÇÃO')) return '🔧';
+    if (nomeUpper.includes('CHURN')) return '📉';
+    if (nomeUpper.includes('REVERTIDO')) return '↩️';
+    if (nomeUpper.includes('RETENÇÃO')) return '🎯';
+    if (nomeUpper.includes('VENDAS') || nomeUpper.includes('AQUISIÇÃO')) return '💰';
+    
+    return '📊';
 }
 
 // ===== LIMPAR FILTROS =====
@@ -141,7 +153,7 @@ function limparConteudo() {
 // ===== MOSTRAR ERRO =====
 function mostrarErro(mensagem) {
     document.getElementById('conteudo').innerHTML = `
-        <div class="placeholder" style="color: #f44336;">
+        <div class="placeholder" style="color: #ff3333;">
             <p>⚠️ ${mensagem}</p>
         </div>
     `;
