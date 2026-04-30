@@ -84,7 +84,7 @@
         ]
       },
       {
-        "segmento": "AQUISIÇ��O",
+        "segmento": "AQUISIÇÃO",
         "indicadores": [
           { "nome": "TMO", "meta": "100000%" },
           { "nome": "TEMPO LOGADO", "meta": "06:20:00" }
