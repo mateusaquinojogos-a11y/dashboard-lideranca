@@ -1,1 +1,163 @@
-{"operations":[{"operation_name":"Operation 1","indicator":"Indicator 1"},{"operation_name":"Operation 2","indicator":"Indicator 2"},{"operation_name":"Operation 3","indicator":"Indicator 3"},{"operation_name":"Operation 4","indicator":"Indicator 4"},{"operation_name":"Operation 5","indicator":"Indicator 5"},{"operation_name":"Operation 6","indicator":"Indicator 6"},{"operation_name":"Operation 7","indicator":"Indicator 7"},{"operation_name":"Operation 8","indicator":"Indicator 8"},{"operation_name":"Operation 9","indicator":"Indicator 9"},{"operation_name":"Operation 10","indicator":"Indicator 10"}]}
+[
+  {
+    "operacao": "CLARO BRASIL - RESIDENCIAL",
+    "segmentos": [
+      {
+        "segmento": "COMBO MULTI N1",
+        "indicadores": [
+          { "nome": "TMO (Veterano)", "meta": "502" },
+          { "nome": "%RECHAMADA", "meta": "32,00%" },
+          { "nome": "%TRANSFERÊNCIA", "meta": "8,10%" },
+          { "nome": "TEMPO LOGADO", "meta": "06:15:04" }
+        ]
+      },
+      {
+        "segmento": "COMBO MULTI RET",
+        "indicadores": [
+          { "nome": "TMO", "meta": "825" },
+          { "nome": "RECHAMADA", "meta": "32,00%" },
+          { "nome": "TEMPO LOGADO", "meta": "06:15:04" }
+        ]
+      },
+      {
+        "segmento": "MASSIVO N1",
+        "indicadores": [
+          { "nome": "TMO", "meta": "736" },
+          { "nome": "%RECHAMADA", "meta": "28,50%" },
+          { "nome": "TEMPO LOGADO", "meta": "06:15:04" }
+        ]
+      },
+      {
+        "segmento": "MASSIVO RET",
+        "indicadores": [
+          { "nome": "TMO", "meta": "736" },
+          { "nome": "%RECHAMADA", "meta": "28,50%" },
+          { "nome": "TEMPO LOGADO", "meta": "06:15:04" }
+        ]
+      },
+      {
+        "segmento": "CRC COMBO",
+        "indicadores": [
+          { "nome": "TMO", "meta": "390" },
+          { "nome": "%RECHAMADA", "meta": "41,28%" },
+          { "nome": "%TRANSFERÊNCIA", "meta": "2,35%" },
+          { "nome": "TEMPO LOGADO", "meta": "06:15:04" }
+        ]
+      },
+      {
+        "segmento": "CRC MASSIVO",
+        "indicadores": [
+          { "nome": "TMO", "meta": "334" },
+          { "nome": "%RECHAMADA", "meta": "38,15%" },
+          { "nome": "%TRANSFERÊNCIA", "meta": "4,35%" },
+          { "nome": "TEMPO LOGADO", "meta": "06:15:04" }
+        ]
+      },
+      {
+        "segmento": "CAP",
+        "indicadores": [
+          { "nome": "TMO", "meta": "295" },
+          { "nome": "%RECHAMADA", "meta": "27,90%" },
+          { "nome": "TEMPO LOGADO", "meta": "06:15:04" }
+        ]
+      },
+      {
+        "segmento": "TECNICO",
+        "indicadores": [
+          { "nome": "%RECHAMADA", "meta": "28,75%" },
+          { "nome": "TEMPO LOGADO", "meta": "06:20:00" }
+        ]
+      },
+      {
+        "segmento": "MUDANÇA DE ENDEREÇO",
+        "indicadores": [
+          { "nome": "TEMPO LOGADO", "meta": "06:20:00" }
+        ]
+      },
+      {
+        "segmento": "TELEVENDAS ATIVO",
+        "indicadores": [
+          { "nome": "TEMPO LOGADO", "meta": "06:20:00" },
+          { "nome": "TICKET MEDIO", "meta": "R$ 280,00" },
+          { "nome": "INSTALAÇÃO", "meta": "76%" },
+          { "nome": "CHURN", "meta": "15%" }
+        ]
+      },
+      {
+        "segmento": "AQUISIÇ��O",
+        "indicadores": [
+          { "nome": "TMO", "meta": "100000%" },
+          { "nome": "TEMPO LOGADO", "meta": "06:20:00" }
+        ]
+      },
+      {
+        "segmento": "VENDAS CROSS",
+        "indicadores": [
+          { "nome": "TEMPO LOGADO", "meta": "06:20:00" }
+        ]
+      },
+      {
+        "segmento": "VENDAS RENTABILIDADE",
+        "indicadores": [
+          { "nome": "TEMPO LOGADO", "meta": "06:20:00" }
+        ]
+      },
+      {
+        "segmento": "REVERSÃO",
+        "indicadores": [
+          { "nome": "TEMPO LOGADO", "meta": "06:16:12" },
+          { "nome": "REVERTIDO DU", "meta": "8" }
+        ]
+      },
+      {
+        "segmento": "RETENÇÃO ATIVO",
+        "indicadores": [
+          { "nome": "RETENÇÃO PS8", "meta": "-1,00%" },
+          { "nome": "TEMPO LOGADO", "meta": "06:30:04" }
+        ]
+      }
+    ]
+  },
+  {
+    "operacao": "CLARO BRASIL - MÓVEL",
+    "segmentos": [
+      {
+        "segmento": "CONTROLE N1",
+        "indicadores": [
+          { "nome": "TMO", "meta": "246" },
+          { "nome": "RECHAMADA", "meta": "17,00%" },
+          { "nome": "TRANSFERÊNCIA", "meta": "6,00%" }
+        ]
+      },
+      {
+        "segmento": "PRÉ PAGO",
+        "indicadores": [
+          { "nome": "TMO", "meta": "270" },
+          { "nome": "RECHAMADA", "meta": "16,00%" }
+        ]
+      },
+      {
+        "segmento": "SERVICE TO SALES",
+        "indicadores": [
+          { "nome": "TMO", "meta": "453" },
+          { "nome": "RECHAMADA", "meta": "17,00%" }
+        ]
+      },
+      {
+        "segmento": "RETENÇÃO",
+        "indicadores": [
+          { "nome": "TMO", "meta": "409" },
+          { "nome": "RECHAMADA", "meta": "16,00%" }
+        ]
+      },
+      {
+        "segmento": "CRC MÓVEL",
+        "indicadores": [
+          { "nome": "TMO", "meta": "239" },
+          { "nome": "RECHAMADA", "meta": "27,70%" },
+          { "nome": "TRANSFERÊNCIA", "meta": "3,70%" }
+        ]
+      }
+    ]
+  }
+]
