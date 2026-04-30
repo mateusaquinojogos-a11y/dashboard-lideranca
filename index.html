@@ -1,60 +1,66 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="robots" content="noindex">
-    <title>Executive Dashboard</title>
-    <style>
-        body {
-            background-color: #121212;
-            color: #ffffff;
-            font-family: Arial, sans-serif;
-        }
-        .container {
-            max-width: 1200px;
-            margin: auto;
-            padding: 20px;
-        }
-        .header {
-            text-align: center;
-        }
-        .card {
-            background-color: #1e1e1e;
-            border-radius: 8px;
-            padding: 20px;
-            margin: 10px 0;
-        }
-        .indicator {
-            font-size: 2em;
-        }
-    </style>
+    <meta name="robots" content="noindex, nofollow">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Dashboard Liderança - CLARO</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="container">
-        <div class="header">
-            <h1>Executive Dashboard</h1>
-        </div>
-        <div class="card">
-            <h2>Operations Indicators</h2>
-            <div class="indicator">[Indicator Data]</div>
-        </div>
-        <div class="card">
-            <h2>Goals</h2>
-            <div class="indicator">[Goal Data]</div>
-        </div>
-        <div class="card">
-            <h2>Actual Performance</h2>
-            <div class="indicator">[Performance Data]</div>
-        </div>
+        <!-- HEADER -->
+        <header class="header">
+            <div class="header-content">
+                <div class="logo-section">
+                    <svg class="logo" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="50" cy="50" r="45" fill="none" stroke="#00d4ff" stroke-width="3"/>
+                        <text x="50" y="65" font-size="50" font-weight="bold" fill="#00d4ff" text-anchor="middle" font-family="Arial">C</text>
+                    </svg>
+                    <div class="header-text">
+                        <h1>Dashboard Liderança</h1>
+                        <p class="subtitle">CLARO BRASIL - Metas Maio 2026</p>
+                    </div>
+                </div>
+                <div class="header-date" id="dataAtual"></div>
+            </div>
+        </header>
+
+        <!-- FILTROS -->
+        <section class="filters">
+            <div class="filter-group">
+                <label for="operacao">Operação:</label>
+                <select id="operacao">
+                    <option value="">Selecione uma operação...</option>
+                    <option value="CLARO BRASIL - RESIDENCIAL">CLARO BRASIL - RESIDENCIAL</option>
+                    <option value="CLARO BRASIL - MÓVEL">CLARO BRASIL - MÓVEL</option>
+                </select>
+            </div>
+            <div class="filter-group">
+                <label for="segmento">Segmento:</label>
+                <select id="segmento" disabled>
+                    <option value="">Selecione um segmento...</option>
+                </select>
+            </div>
+            <button class="btn-reset" onclick="limparFiltros()">Limpar Filtros</button>
+        </section>
+
+        <!-- CONTEÚDO PRINCIPAL -->
+        <main class="dashboard">
+            <div id="conteudo" class="conteudo">
+                <div class="placeholder">
+                    <p>📊 Selecione uma operação e segmento para visualizar as metas</p>
+                </div>
+            </div>
+        </main>
+
+        <!-- RODAPÉ -->
+        <footer class="footer">
+            <p>&copy; 2026 CLARO BRASIL - Análise e Consultoria. Acesso Restrito a Lideranças.</p>
+        </footer>
     </div>
-    <script>
-        fetch('data.json')
-            .then(response => response.json())
-            .then(data => {
-                // Logic to update indicators with fetched data
-                console.log(data);
-            });
-    </script>
+
+    <script src="app.js"></script>
 </body>
 </html>
