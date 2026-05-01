@@ -374,9 +374,21 @@ body {
     text-overflow: ellipsis;
 }
 
-    .segmento-value {
-        font-size: 18px;
-    }
+.segmento-value {
+    font-size: 16px;
+    word-break: break-word;
+    line-height: 1.2;
+}
+
+.segmento-info {
+    padding: 15px;
+    margin-bottom: 20px;
+}
+
+.segmento-info h3 {
+    font-size: 10px;
+    margin-bottom: 6px;
+}
 
     .aviso-sigiloso {
         padding: 12px;
