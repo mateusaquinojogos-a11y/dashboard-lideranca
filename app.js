@@ -16,7 +16,7 @@ function atualizarData() {
     const hoje = new Date();
     const opcoes = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
     const dataFormatada = hoje.toLocaleDateString('pt-BR', opcoes);
-    document.getElementById('dataAtual').textContent = `📅 ${dataFormatada}`;
+    document.getElementById('dataAtual').textContent = `Atualizado em: ${dataFormatada}`;
 }
 
 // ===== CARREGAR DADOS DO JSON =====
@@ -30,7 +30,6 @@ async function carregarDados() {
         if (!response.ok) throw new Error('Erro ao carregar dados');
         
         dadosOperacoes = await response.json();
-        console.log('Dados carregados com sucesso');
     } catch (error) {
         console.error('Erro ao carregar dados:', error);
         mostrarErro('Erro ao carregar dados. Tente recarregar a página.');
@@ -87,50 +86,38 @@ function atualizarDashboard() {
     // Montar HTML
     let html = `
         <div class="segmento-info">
-            <h3>📌 Segmento Selecionado</h3>
+            <h3>Segmento</h3>
             <p class="segmento-value">${dadosSeg.segmento}</p>
         </div>
         
-        <div class="indicators-cards">
+        <div class="table-container">
+            <table class="indicators-table">
+                <thead>
+                    <tr>
+                        <th>Indicador</th>
+                        <th>Meta - Maio 2026</th>
+                    </tr>
+                </thead>
+                <tbody>
     `;
     
-    // Adicionar cards dos indicadores
-    dadosSeg.indicadores.forEach((ind, index) => {
-        const emoji = getEmojiParaIndicador(ind.nome);
+    // Adicionar indicadores
+    dadosSeg.indicadores.forEach(ind => {
         html += `
-            <div class="indicator-card">
-                <div class="card-content">
-                    <div class="card-icon">${emoji}</div>
-                    <div class="card-name">${ind.nome}</div>
-                    <div class="card-value">${ind.meta}</div>
-                </div>
-            </div>
+            <tr>
+                <td>${ind.nome}</td>
+                <td>${ind.meta}</td>
+            </tr>
         `;
     });
     
     html += `
+                </tbody>
+            </table>
         </div>
     `;
     
     document.getElementById('conteudo').innerHTML = html;
-}
-
-// ===== EMOJIS POR TIPO DE INDICADOR =====
-function getEmojiParaIndicador(nome) {
-    const nomeUpper = nome.toUpperCase();
-    
-    if (nomeUpper.includes('TMO')) return '⏱️';
-    if (nomeUpper.includes('RECHAMADA')) return '📞';
-    if (nomeUpper.includes('TRANSFERÊNCIA')) return '🔄';
-    if (nomeUpper.includes('TEMPO LOGADO')) return '⏰';
-    if (nomeUpper.includes('TICKET')) return '🎫';
-    if (nomeUpper.includes('INSTALAÇÃO')) return '🔧';
-    if (nomeUpper.includes('CHURN')) return '📉';
-    if (nomeUpper.includes('REVERTIDO')) return '↩️';
-    if (nomeUpper.includes('RETENÇÃO')) return '🎯';
-    if (nomeUpper.includes('VENDAS') || nomeUpper.includes('AQUISIÇÃO')) return '💰';
-    
-    return '📊';
 }
 
 // ===== LIMPAR FILTROS =====
@@ -145,7 +132,7 @@ function limparFiltros() {
 function limparConteudo() {
     document.getElementById('conteudo').innerHTML = `
         <div class="placeholder">
-            <p>📊 Selecione uma operação e segmento para visualizar as metas</p>
+            <p>Selecione uma operação e segmento para visualizar as metas</p>
         </div>
     `;
 }
@@ -154,15 +141,7 @@ function limparConteudo() {
 function mostrarErro(mensagem) {
     document.getElementById('conteudo').innerHTML = `
         <div class="placeholder" style="color: #ff3333;">
-            <p>⚠️ ${mensagem}</p>
+            <p>Erro: ${mensagem}</p>
         </div>
     `;
-}
-
-// ===== SEGURANÇA: Desabilitar console em produção =====
-if (document.location.hostname !== 'localhost' && 
-    !document.location.hostname.includes('127.0.0.1')) {
-    console.log = function() {};
-    console.warn = function() {};
-    console.error = function() {};
 }
