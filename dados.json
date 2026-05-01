@@ -12,7 +12,7 @@
         ]
       },
       {
-        "segmento": "COMBO MULTI RET",
+        "segmento": "CM RETENÇÃO",
         "indicadores": [
           { "nome": "TMO", "meta": "825" },
           { "nome": "RECHAMADA", "meta": "32,00%" },
@@ -69,7 +69,7 @@
         ]
       },
       {
-        "segmento": "MUDANÇA DE ENDEREÇO",
+        "segmento": "MUDANÇA DE END.",
         "indicadores": [
           { "nome": "TEMPO LOGADO", "meta": "06:20:00" }
         ]
@@ -97,7 +97,7 @@
         ]
       },
       {
-        "segmento": "VENDAS RENTABILIDADE",
+        "segmento": "VENDAS RENTAB.",
         "indicadores": [
           { "nome": "TEMPO LOGADO", "meta": "06:20:00" }
         ]
