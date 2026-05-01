@@ -9,12 +9,8 @@
     --bg-secondary: #1a1f3a;
     --bg-tertiary: #2a2f4a;
     --accent-cyan: #00d4ff;
-    --accent-red: #ff3333;
     --text-primary: #e0e0e0;
     --text-secondary: #a0a0a0;
-    --success: #4CAF50;
-    --warning: #ff9800;
-    --danger: #f44336;
     --border: #3a3f5a;
 }
 
@@ -40,11 +36,8 @@ body {
 /* ===== HEADER ===== */
 .header {
     padding: 30px 0;
-    border-bottom: 3px solid var(--accent-cyan);
+    border-bottom: 2px solid var(--accent-cyan);
     margin-bottom: 20px;
-    background: linear-gradient(90deg, rgba(0, 212, 255, 0.05) 0%, rgba(255, 51, 51, 0.05) 100%);
-    border-radius: 8px;
-    padding: 30px;
 }
 
 .header-content {
@@ -55,51 +48,30 @@ body {
     gap: 20px;
 }
 
-.logo-section {
-    display: flex;
-    align-items: center;
-    gap: 15px;
-}
-
-.logo {
-    width: 80px;
-    height: 40px;
-    min-width: 80px;
-}
-
-.logo-divider {
-    font-size: 32px;
-    font-weight: bold;
-    color: var(--accent-red);
-    opacity: 0.7;
-}
-
 .header-text h1 {
     font-size: 32px;
     font-weight: 700;
-    background: linear-gradient(90deg, var(--accent-cyan) 0%, var(--accent-red) 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+    color: var(--accent-cyan);
     margin-bottom: 5px;
 }
 
 .header-text .subtitle {
     font-size: 14px;
     color: var(--text-secondary);
-    font-weight: 500;
+    font-weight: 400;
 }
 
 .header-date {
     font-size: 12px;
     color: var(--text-secondary);
     text-align: right;
+    min-width: 200px;
 }
 
 /* ===== AVISO SIGILOSO ===== */
 .aviso-sigiloso {
-    background: linear-gradient(135deg, rgba(255, 51, 51, 0.1) 0%, rgba(0, 212, 255, 0.1) 100%);
-    border: 2px solid var(--accent-red);
+    background-color: var(--bg-secondary);
+    border-left: 4px solid var(--accent-cyan);
     border-radius: 8px;
     padding: 20px;
     margin-bottom: 25px;
@@ -112,7 +84,7 @@ body {
 }
 
 .aviso-icon {
-    font-size: 28px;
+    font-size: 24px;
     min-width: 30px;
 }
 
@@ -121,8 +93,8 @@ body {
 }
 
 .aviso-text strong {
-    color: var(--accent-red);
-    font-size: 16px;
+    color: var(--accent-cyan);
+    font-size: 14px;
     display: block;
     margin-bottom: 8px;
 }
@@ -131,7 +103,7 @@ body {
     font-size: 12px;
     color: var(--text-secondary);
     margin-bottom: 4px;
-    line-height: 1.4;
+    line-height: 1.5;
 }
 
 /* ===== FILTROS ===== */
@@ -174,16 +146,15 @@ body {
 
 .filter-group select:hover,
 .btn-reset:hover {
-    border-color: var(--accent-red);
+    border-color: var(--accent-cyan);
     background-color: var(--border);
-    transform: translateY(-2px);
 }
 
 .filter-group select:focus,
 .btn-reset:focus {
     outline: none;
-    border-color: var(--accent-red);
-    box-shadow: 0 0 0 3px rgba(255, 51, 51, 0.1);
+    border-color: var(--accent-cyan);
+    box-shadow: 0 0 0 3px rgba(0, 212, 255, 0.1);
 }
 
 .filter-group select:disabled {
@@ -192,7 +163,7 @@ body {
 }
 
 .btn-reset {
-    background: linear-gradient(135deg, var(--accent-cyan) 0%, var(--accent-red) 100%);
+    background-color: var(--accent-cyan);
     color: #000;
     font-weight: 600;
     border: none;
@@ -200,7 +171,7 @@ body {
 }
 
 .btn-reset:hover {
-    box-shadow: 0 4px 15px rgba(255, 51, 51, 0.3);
+    background-color: #00b8d4;
 }
 
 /* ===== DASHBOARD ===== */
@@ -226,11 +197,10 @@ body {
 
 /* ===== SEGMENTO INFO ===== */
 .segmento-info {
-    background: linear-gradient(135deg, rgba(0, 212, 255, 0.1) 0%, rgba(255, 51, 51, 0.1) 100%);
+    background-color: var(--bg-tertiary);
     padding: 20px;
     border-radius: 8px;
     border-left: 4px solid var(--accent-cyan);
-    border-right: 4px solid var(--accent-red);
     margin-bottom: 30px;
 }
 
@@ -245,99 +215,66 @@ body {
 .segmento-value {
     font-size: 28px;
     font-weight: 700;
-    background: linear-gradient(90deg, var(--accent-cyan) 0%, var(--accent-red) 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+    color: var(--accent-cyan);
 }
 
-/* ===== CARDS INDICADORES ===== */
-.indicators-cards {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 20px;
+/* ===== TABELA INDICADORES ===== */
+.table-container {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
     margin-top: 25px;
 }
 
-.indicator-card {
-    background: linear-gradient(135deg, var(--bg-tertiary) 0%, var(--bg-secondary) 100%);
-    border: 2px solid var(--accent-cyan);
-    border-radius: 12px;
-    padding: 20px;
-    transition: all 0.3s ease;
-    cursor: pointer;
-    position: relative;
-    overflow: hidden;
-}
-
-.indicator-card::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: 0;
-    height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(255, 51, 51, 0.1));
-    transition: width 0.3s ease;
-    z-index: 0;
-}
-
-.indicator-card:hover {
-    transform: translateY(-5px);
-    border-color: var(--accent-red);
-    box-shadow: 0 8px 25px rgba(255, 51, 51, 0.2);
-}
-
-.indicator-card:hover::before {
+.indicators-table {
     width: 100%;
+    border-collapse: collapse;
+    font-size: 13px;
 }
 
-.card-content {
-    position: relative;
-    z-index: 1;
+.indicators-table thead {
+    background-color: rgba(0, 212, 255, 0.1);
 }
 
-.card-icon {
-    font-size: 24px;
-    margin-bottom: 10px;
-}
-
-.card-name {
-    font-size: 12px;
-    color: var(--text-secondary);
+.indicators-table th {
+    padding: 15px 12px;
+    text-align: left;
+    font-weight: 600;
+    color: var(--accent-cyan);
+    border-bottom: 2px solid var(--border);
     text-transform: uppercase;
     letter-spacing: 0.5px;
-    margin-bottom: 8px;
+    white-space: nowrap;
 }
 
-.card-value {
-    font-size: 28px;
-    font-weight: 700;
+.indicators-table td {
+    padding: 12px;
+    border-bottom: 1px solid var(--border);
+}
+
+.indicators-table tbody tr:hover {
+    background-color: rgba(0, 212, 255, 0.05);
+}
+
+.indicators-table td:first-child {
+    font-weight: 600;
     color: var(--accent-cyan);
-    word-break: break-word;
-}
-
-.card-value.highlight {
-    color: var(--accent-red);
 }
 
 /* ===== FOOTER ===== */
 .footer {
     margin-top: 50px;
     padding: 20px;
-    border-top: 2px solid var(--border);
-    background: linear-gradient(90deg, rgba(0, 212, 255, 0.05) 0%, rgba(255, 51, 51, 0.05) 100%);
-    border-radius: 8px;
+    border-top: 1px solid var(--border);
     text-align: center;
 }
 
-.footer-content p {
+.footer p {
     color: var(--text-secondary);
     font-size: 12px;
     margin: 5px 0;
 }
 
-.footer-content strong {
+.footer strong {
     color: var(--accent-cyan);
 }
 
@@ -345,20 +282,6 @@ body {
 @media (max-width: 768px) {
     .container {
         padding: 15px;
-    }
-
-    .header {
-        padding: 20px;
-    }
-
-    .header-content {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-
-    .logo {
-        width: 60px;
-        height: 30px;
     }
 
     .header-text h1 {
@@ -369,26 +292,31 @@ body {
         font-size: 12px;
     }
 
+    .header-date {
+        text-align: left;
+        min-width: auto;
+    }
+
     .filters {
         grid-template-columns: 1fr;
         padding: 15px;
     }
 
-    .indicators-cards {
-        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-        gap: 15px;
+    .indicators-table {
+        font-size: 12px;
     }
 
-    .card-value {
+    .indicators-table th,
+    .indicators-table td {
+        padding: 10px 8px;
+    }
+
+    .segmento-value {
         font-size: 22px;
     }
 
     .aviso-sigiloso {
         padding: 15px;
-    }
-
-    .aviso-icon {
-        font-size: 24px;
     }
 
     .aviso-text p {
@@ -399,19 +327,6 @@ body {
 @media (max-width: 480px) {
     .container {
         padding: 10px;
-    }
-
-    .header {
-        padding: 15px;
-    }
-
-    .logo {
-        width: 50px;
-        height: 25px;
-    }
-
-    .logo-divider {
-        font-size: 24px;
     }
 
     .header-text h1 {
@@ -432,40 +347,28 @@ body {
         font-size: 11px;
     }
 
-    .indicators-cards {
-        grid-template-columns: 1fr;
-        gap: 12px;
-    }
-
-    .indicator-card {
-        padding: 15px;
-    }
-
-    .card-name {
+    .indicators-table {
         font-size: 11px;
     }
 
-    .card-value {
-        font-size: 20px;
+    .indicators-table th,
+    .indicators-table td {
+        padding: 8px 6px;
+    }
+
+    .segmento-value {
+        font-size: 18px;
     }
 
     .aviso-sigiloso {
         padding: 12px;
     }
 
-    .aviso-icon {
-        font-size: 20px;
-    }
-
     .aviso-text strong {
-        font-size: 14px;
+        font-size: 13px;
     }
 
     .aviso-text p {
         font-size: 10px;
-    }
-
-    .footer-content p {
-        font-size: 11px;
     }
 }
